@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f4f1eb" />
+  <title>Orchid Chat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <aside class="sidebar" aria-label="Chat navigation">
+      <div class="brand-row">
+        <div class="brand-mark" aria-hidden="true">✦</div>
+        <span>orchid</span>
+      </div>
+
+      <button class="new-chat" id="newChatButton" type="button">
+        <span class="plus" aria-hidden="true">+</span>
+        New conversation
+      </button>
+
+      <div class="sidebar-label">Recent</div>
+      <nav class="conversation-list" aria-label="Recent conversations">
+        <button class="conversation active" type="button">
+          <span class="conversation-icon">◌</span>
+          <span>Getting started</span>
+          <span class="conversation-dot" aria-hidden="true"></span>
+        </button>
+        <button class="conversation" type="button">
+          <span class="conversation-icon">◌</span>
+          <span>Weekend ideas</span>
+        </button>
+        <button class="conversation" type="button">
+          <span class="conversation-icon">◌</span>
+          <span>Project notes</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="status-line"><span class="status-dot"></span> Online and ready</div>
+        <button class="profile-button" type="button" aria-label="Open profile menu">
+          <span class="avatar">AS</span>
+          <span class="profile-copy"><strong>Alex Smith</strong><small>Personal workspace</small></span>
+          <span class="chevron" aria-hidden="true">⌄</span>
+        </button>
+      </div>
+    </aside>
+
+    <section class="chat-panel" aria-label="Chat with Orchid">
+      <header class="chat-header">
+        <div class="assistant-title">
+          <div class="assistant-avatar" aria-hidden="true">✦</div>
+          <div>
+            <h1>Orchid</h1>
+            <p><span class="status-dot"></span> Personal assistant</p>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button class="icon-button" type="button" aria-label="Search conversation" title="Search conversation">⌕</button>
+          <button class="icon-button" type="button" aria-label="More options" title="More options">•••</button>
+        </div>
+      </header>
+
+      <div class="chat-scroll" id="chatScroll">
+        <div class="date-divider"><span>Today</span></div>
+        <div class="welcome-block">
+          <div class="welcome-spark">✦</div>
+          <h2>Good morning, Alex.</h2>
+          <p>What would you like to make a little easier today?</p>
+        </div>
+
+        <div class="message-row assistant-row">
+          <div class="mini-avatar" aria-hidden="true">✦</div>
+          <div class="message-stack">
+            <div class="message-meta"><strong>Orchid</strong><time>09:41</time></div>
+            <div class="message assistant-message">Hi Alex! I’m here to help you think, plan, write, or simply get unstuck. What’s on your mind?</div>
+          </div>
+        </div>
+        <div class="quick-prompts" aria-label="Suggested prompts">
+          <button type="button" data-prompt="Help me plan my day">Plan my day <span>→</span></button>
+          <button type="button" data-prompt="Give me a creative spark">Give me a creative spark <span>→</span></button>
+          <button type="button" data-prompt="Help me write something">Help me write something <span>→</span></button>
+        </div>
+      </div>
+
+      <div class="composer-wrap">
+        <form class="composer" id="chatForm">
+          <textarea id="messageInput" rows="1" placeholder="Message Orchid..." aria-label="Message Orchid"></textarea>
+          <div class="composer-tools">
+            <button class="tool-button" type="button" aria-label="Attach a file" title="Attach a file">⌕</button>
+            <span class="composer-hint">Enter to send · Shift + Enter for new line</span>
+            <button class="send-button" type="submit" aria-label="Send message" title="Send message">↑</button>
+          </div>
+        </form>
+        <p class="privacy-note">Orchid can make mistakes. Check important information.</p>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
